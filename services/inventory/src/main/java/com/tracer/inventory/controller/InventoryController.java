@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.*;
 public class InventoryController {
 
     @PostMapping("/check")
-    public InventoryCheckResponse checkInventory(@RequestBody InventoryCheckRequest request) {
-        System.out.println("[INVENTORY-SERVICE] Checking inventory: " + request);
+    public InventoryCheckResponse checkInventory(
+            @RequestBody InventoryCheckRequest request,
+            @RequestHeader(value = "X-Trace-Id", required = false) String traceId) {
+
+        System.out.println("[INVENTORY-SERVICE] [" + traceId + "] Checking inventory: " + request);
         return new InventoryCheckResponse(true, "All items in stock");
     }
 
