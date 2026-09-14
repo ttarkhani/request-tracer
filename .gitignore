@@ -1,0 +1,22 @@
+# Java / Maven build output
+target/
+*.class
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Node / React (for the dashboard, later)
+node_modules/
+dist/
+build/
+
+# Environment files
+.env
