@@ -7,8 +7,11 @@ import org.springframework.web.bind.annotation.*;
 public class OrderServiceController {
 
     @PostMapping
-    public OrderResponse createOrder(@RequestBody OrderRequest request) {
-        System.out.println("[ORDERS-SERVICE] Creating order: " + request);
+    public OrderResponse createOrder(
+            @RequestBody OrderRequest request,
+            @RequestHeader(value = "X-Trace-Id", required = false) String traceId) {
+
+        System.out.println("[ORDERS-SERVICE] [" + traceId + "] Creating order: " + request);
         return new OrderResponse(
             "ORD-99999",
             "Order created at orders service",
