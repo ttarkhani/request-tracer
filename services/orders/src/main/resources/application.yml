@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: orders-service
+
+server:
+  port: 8081
