@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: log-aggregator
+
+server:
+  port: 8084
