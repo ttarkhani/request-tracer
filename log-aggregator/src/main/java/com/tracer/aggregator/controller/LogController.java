@@ -9,6 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class LogController {
 
     private final Map<String, List<LogEntry>> traceStore = new ConcurrentHashMap<>();
