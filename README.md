@@ -1,6 +1,3 @@
-cd /Users/tahatarkhani/Documents/GitHub/request-tracer
-
-cat > README.md << 'EOF'
 # 🔍 Request Tracer
 
 Lightweight distributed tracing tool that shows how a single request flows across multiple microservices — a scoped-down, from-scratch version of tools like Jaeger or Zipkin, built to demonstrate the actual mechanics of correlation ID propagation, centralized structured logging, and trace visualization across a real service mesh.
@@ -149,4 +146,3 @@ curl http://localhost:8084/traces/YOUR_TRACE_ID
 - No automated tests — all verification so far is manual curl + log inspection, plus visual confirmation in the dashboard
 - No load testing yet — all real metrics above come from single-request tests, not concurrent traffic
 - No persistence — the aggregator's trace store is in-memory only; restarting it clears all stored traces
-EOF
