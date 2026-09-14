@@ -1,4 +1,4 @@
-package com.tracer.aggregator.model;
+package com.tracer.orders;
 
 public class LogEntry {
     public String traceId;
