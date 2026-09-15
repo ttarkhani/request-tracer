@@ -1,0 +1,41 @@
+services:
+  aggregator:
+    build: ./log-aggregator
+    ports:
+      - "8084:8084"
+
+  gateway:
+    build: ./services/api-gateway
+    ports:
+      - "8080:8080"
+    environment:
+      - ORDERS_SERVICE_URL=http://orders:8081/api/orders
+      - AGGREGATOR_URL=http://aggregator:8084/logs
+    depends_on:
+      - aggregator
+
+  orders:
+    build: ./services/orders
+    ports:
+      - "8081:8081"
+    environment:
+      - INVENTORY_SERVICE_URL=http://inventory:8082/api/inventory/check
+      - AGGREGATOR_URL=http://aggregator:8084/logs
+    depends_on:
+      - aggregator
+
+  inventory:
+    build: ./services/inventory
+    ports:
+      - "8082:8082"
+    environment:
+      - AGGREGATOR_URL=http://aggregator:8084/logs
+    depends_on:
+      - aggregator
+
+  dashboard:
+    build: ./dashboard
+    ports:
+      - "3000:80"
+    depends_on:
+      - aggregator
