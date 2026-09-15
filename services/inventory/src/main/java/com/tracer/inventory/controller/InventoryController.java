@@ -2,6 +2,7 @@ package com.tracer.inventory.controller;
 
 import com.tracer.inventory.LogEntry;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -12,7 +13,8 @@ public class InventoryController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String AGGREGATOR_URL = "http://localhost:8084/logs";
+    @Value("${aggregator.url}")
+    private String aggregatorUrl;
 
     @PostMapping("/check")
     public InventoryCheckResponse checkInventory(
@@ -33,7 +35,7 @@ public class InventoryController {
     private void shipLog(String traceId, String message, String status, long timestamp) {
         try {
             LogEntry entry = new LogEntry(traceId, "inventory-service", message, status, timestamp);
-            restTemplate.postForObject(AGGREGATOR_URL, entry, String.class);
+            restTemplate.postForObject(aggregatorUrl, entry, String.class);
         } catch (Exception e) {
             System.out.println("[INVENTORY-SERVICE] Failed to ship log to aggregator: " + e.getMessage());
         }

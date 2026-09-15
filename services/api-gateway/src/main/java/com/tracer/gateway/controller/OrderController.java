@@ -2,6 +2,7 @@ package com.tracer.gateway.controller;
 
 import com.tracer.gateway.LogEntry;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -17,8 +18,11 @@ public class OrderController {
     @Autowired
     private RestTemplate restTemplate;
 
-    private static final String ORDERS_SERVICE_URL = "http://localhost:8081/api/orders";
-    private static final String AGGREGATOR_URL = "http://localhost:8084/logs";
+    @Value("${orders.service.url}")
+    private String ordersServiceUrl;
+
+    @Value("${aggregator.url}")
+    private String aggregatorUrl;
 
     @PostMapping("/place")
     public Object placeOrder(@RequestBody OrderRequest request) {
@@ -35,7 +39,7 @@ public class OrderController {
         HttpEntity<OrderRequest> httpEntity = new HttpEntity<>(request, headers);
 
         System.out.println("[API-GATEWAY] [" + traceId + "] Calling Orders service...");
-        Object response = restTemplate.postForObject(ORDERS_SERVICE_URL, httpEntity, Object.class);
+        Object response = restTemplate.postForObject(ordersServiceUrl, httpEntity, Object.class);
 
         long completedAt = System.currentTimeMillis();
         System.out.println("[API-GATEWAY] [" + traceId + "] Received response from Orders service");
@@ -47,7 +51,7 @@ public class OrderController {
     private void shipLog(String traceId, String message, String status, long timestamp) {
         try {
             LogEntry entry = new LogEntry(traceId, "api-gateway", message, status, timestamp);
-            restTemplate.postForObject(AGGREGATOR_URL, entry, String.class);
+            restTemplate.postForObject(aggregatorUrl, entry, String.class);
         } catch (Exception e) {
             System.out.println("[API-GATEWAY] Failed to ship log to aggregator: " + e.getMessage());
         }
