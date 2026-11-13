@@ -1,0 +1,65 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.tracer:e2e-tests >------------------------
+[INFO] Building End-to-end tests (run against a running docker compose stack) 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ e2e-tests ---
+[INFO] skip non existing resourceDirectory /Users/tahatarkhani/Documents/GitHub/request-tracer/e2e/src/main/resources
+[INFO] skip non existing resourceDirectory /Users/tahatarkhani/Documents/GitHub/request-tracer/e2e/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ e2e-tests ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ e2e-tests ---
+[INFO] skip non existing resourceDirectory /Users/tahatarkhani/Documents/GitHub/request-tracer/e2e/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ e2e-tests ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ e2e-tests ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tracer.e2e.TracePropagationE2ETest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.345 s -- in com.tracer.e2e.TracePropagationE2ETest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ e2e-tests ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  3.439 s
+[INFO] Finished at: 2026-11-12T17:23:48-05:00
+[INFO] ------------------------------------------------------------------------
+$ docker compose down -v
+ Container request-tracer-dashboard-1 Stopping 
+ Container request-tracer-inventory-1 Stopping 
+ Container request-tracer-orders-1 Stopping 
+ Container request-tracer-gateway-1 Stopping 
+ Container request-tracer-dashboard-1 Stopped 
+ Container request-tracer-dashboard-1 Removing 
+ Container request-tracer-dashboard-1 Removed 
+ Container request-tracer-gateway-1 Stopped 
+ Container request-tracer-gateway-1 Removing 
+ Container request-tracer-inventory-1 Stopped 
+ Container request-tracer-inventory-1 Removing 
+ Container request-tracer-orders-1 Stopped 
+ Container request-tracer-orders-1 Removing 
+ Container request-tracer-gateway-1 Removed 
+ Container request-tracer-inventory-1 Removed 
+ Container request-tracer-orders-1 Removed 
+ Container request-tracer-aggregator-1 Stopping 
+ Container request-tracer-aggregator-1 Stopped 
+ Container request-tracer-aggregator-1 Removing 
+ Container request-tracer-aggregator-1 Removed 
+ Network request-tracer_default Removing 
+ Network request-tracer_default Removed 

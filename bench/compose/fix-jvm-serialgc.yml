@@ -1,0 +1,14 @@
+# Fix candidate 3b: SerialGC alone.
+services:
+  aggregator:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:+UseSerialGC
+  gateway:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:+UseSerialGC
+  orders:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:+UseSerialGC
+  inventory:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:+UseSerialGC

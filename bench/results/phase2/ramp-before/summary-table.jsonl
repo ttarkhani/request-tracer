@@ -1,0 +1,6 @@
+{"tag": "step:25", "requests": 751, "throughput_rps": 25.03, "error_rate": 0, "p50_ms": 68.93, "p95_ms": 1150.91, "p99_ms": 1771.48, "max_ms": 2255.67, "dropped_iterations": 0}
+{"tag": "step:50", "requests": 1501, "throughput_rps": 50.03, "error_rate": 0, "p50_ms": 41.39, "p95_ms": 409.49, "p99_ms": 846.26, "max_ms": 1100.67, "dropped_iterations": 0}
+{"tag": "step:75", "requests": 2248, "throughput_rps": 74.93, "error_rate": 0, "p50_ms": 50.5, "p95_ms": 492.13, "p99_ms": 697.57, "max_ms": 1027.43, "dropped_iterations": 3}
+{"tag": "step:100", "requests": 2995, "throughput_rps": 99.83, "error_rate": 0, "p50_ms": 41.88, "p95_ms": 337.36, "p99_ms": 641.9, "max_ms": 863.76, "dropped_iterations": 6}
+{"tag": "step:150", "requests": 4038, "throughput_rps": 134.6, "error_rate": 0, "p50_ms": 1309.33, "p95_ms": 3249.73, "p99_ms": 4360.04, "max_ms": 6539.64, "dropped_iterations": 463}
+{"tag": "step:200", "requests": 4417, "throughput_rps": 147.23, "error_rate": 0, "p50_ms": 1773.03, "p95_ms": 3369.35, "p99_ms": 4328.04, "max_ms": 5453.66, "dropped_iterations": 1584}

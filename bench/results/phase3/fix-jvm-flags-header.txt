@@ -1,0 +1,5 @@
+docker info: NCPU=2 MemTotal=6222663680
+kubernetes enabled: true
+power: Now drawing from 'AC Power'  -InternalBattery-0 (id=6619235)	24%; charging; 20:00 remaining present: true 
+args: /private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/snapshots/phase2 rtafter 7 /Users/tahatarkhani/Documents/GitHub/request-tracer/bench/results/phase3/fix-jvm-flags.csv /Users/tahatarkhani/Documents/GitHub/request-tracer/bench/compose/fix-jvm-flags.yml
+Thu Nov 12 18:59:12 EST 2026

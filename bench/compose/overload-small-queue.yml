@@ -1,0 +1,11 @@
+# Deliberate overload: shipper queue capacity 100 (default 10000) so a frozen aggregator overflows it; drops must be counted.
+services:
+  gateway:
+    environment:
+      - LOG_SHIPPER_QUEUE_CAPACITY=100
+  orders:
+    environment:
+      - LOG_SHIPPER_QUEUE_CAPACITY=100
+  inventory:
+    environment:
+      - LOG_SHIPPER_QUEUE_CAPACITY=100

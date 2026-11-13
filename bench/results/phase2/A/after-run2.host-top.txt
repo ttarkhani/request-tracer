@@ -1,0 +1,20 @@
+Processes: 847 total, 3 running, 844 sleeping, 5335 threads 
+2026/11/12 18:23:10
+Load Avg: 5.82, 4.31, 5.12 
+CPU usage: 6.40% user, 11.54% sys, 82.4% idle 
+SharedLibs: 543M resident, 67M data, 38M linkedit.
+MemRegions: 2419917 total, 7884M resident, 128M private, 8656M shared.
+PhysMem: 32G used (4353M wired, 6796M compressor), 77M unused.
+VM: 234T vsize, 4696M framework vsize, 264729859(0) swapins, 270007269(0) swapouts.
+Networks: packets: 29834044/29G in, 15703726/9499M out.
+Disks: 19736970/1467G read, 16705294/1232G written.
+
+PID    COMMAND          %CPU MEM  
+98506  top              0.0  5792K
+98478  sleep            0.0  364K 
+98354  sleep            0.0  388K 
+98208  mdworker_shared  0.0  1740K
+98199  sleep            0.0  380K 
+98187  Google Chrome He 0.0  129M 
+98164  mdworker_shared  0.0  1688K
+98157  XProtectRemediat 0.0  30M  

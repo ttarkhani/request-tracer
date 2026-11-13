@@ -1,0 +1,14 @@
+# Fix candidate 1: initialize DispatcherServlet at startup instead of on first request.
+services:
+  aggregator:
+    environment:
+      - SPRING_MVC_SERVLET_LOAD_ON_STARTUP=1
+  gateway:
+    environment:
+      - SPRING_MVC_SERVLET_LOAD_ON_STARTUP=1
+  orders:
+    environment:
+      - SPRING_MVC_SERVLET_LOAD_ON_STARTUP=1
+  inventory:
+    environment:
+      - SPRING_MVC_SERVLET_LOAD_ON_STARTUP=1

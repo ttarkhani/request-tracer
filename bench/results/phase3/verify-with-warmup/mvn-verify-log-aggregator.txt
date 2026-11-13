@@ -1,0 +1,81 @@
+$ (cd log-aggregator && mvn -B verify)
+JAVA_HOME=/private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/jdk17/jdk-17.0.21+9/Contents/Home
+openjdk version "17.0.21" 2026-10-20
+OpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode)
+Thu Nov 12 19:18:52 EST 2026
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.tracer:log-aggregator >----------------------
+[INFO] Building Log Aggregator 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ log-aggregator ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ log-aggregator ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 5 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ log-aggregator ---
+[INFO] skip non existing resourceDirectory /Users/tahatarkhani/Documents/GitHub/request-tracer/log-aggregator/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ log-aggregator ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 2 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ log-aggregator ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tracer.aggregator.LogControllerTest
+19:18:57.381 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.tracer.aggregator.LogControllerTest]: LogControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:18:57.471 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.tracer.aggregator.LogAggregatorApplication for test class com.tracer.aggregator.LogControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-11-12T19:18:57.790-05:00  INFO 33628 --- [log-aggregator] [           main] c.tracer.aggregator.LogControllerTest    : Starting LogControllerTest using Java 17.0.21 with PID 33628 (started by tahatarkhani in /Users/tahatarkhani/Documents/GitHub/request-tracer/log-aggregator)
+2026-11-12T19:18:57.791-05:00  INFO 33628 --- [log-aggregator] [           main] c.tracer.aggregator.LogControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T19:18:58.627-05:00  INFO 33628 --- [log-aggregator] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-12T19:18:58.627-05:00  INFO 33628 --- [log-aggregator] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-12T19:18:58.629-05:00  INFO 33628 --- [log-aggregator] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2026-11-12T19:18:58.649-05:00  INFO 33628 --- [log-aggregator] [           main] c.tracer.aggregator.LogControllerTest    : Started LogControllerTest in 1.071 seconds (process running for 1.966)
+[LOG-AGGREGATOR] Stored log for trace c1677893-e061-4436-9b0e-ace13dcc543a from svc
+[LOG-AGGREGATOR] Stored log for trace c1677893-e061-4436-9b0e-ace13dcc543a from svc
+[LOG-AGGREGATOR] Stored log for trace c1677893-e061-4436-9b0e-ace13dcc543a from svc
+[LOG-AGGREGATOR] Stored log for trace cd982260-410d-49bd-92ae-14da59c5b646 from svc
+[LOG-AGGREGATOR] Stored log for trace f1626576-1bb0-43bb-b387-57ecbf13d779 from svc
+[LOG-AGGREGATOR] Stored log for trace f1626576-1bb0-43bb-b387-57ecbf13d779 from svc
+[LOG-AGGREGATOR] Stored log for trace f1626576-1bb0-43bb-b387-57ecbf13d779 from svc
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.421 s -- in com.tracer.aggregator.LogControllerTest
+[INFO] Running com.tracer.aggregator.TraceStoreConcurrencyTest
+[INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.448 s -- in com.tracer.aggregator.TraceStoreConcurrencyTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 33, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ log-aggregator ---
+[INFO] Building jar: /Users/tahatarkhani/Documents/GitHub/request-tracer/log-aggregator/target/log-aggregator-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.2.0:repackage (repackage) @ log-aggregator ---
+[INFO] Replacing main artifact /Users/tahatarkhani/Documents/GitHub/request-tracer/log-aggregator/target/log-aggregator-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/tahatarkhani/Documents/GitHub/request-tracer/log-aggregator/target/log-aggregator-1.0.0.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.509 s
+[INFO] Finished at: 2026-11-12T19:19:00-05:00
+[INFO] ------------------------------------------------------------------------
+exit=0

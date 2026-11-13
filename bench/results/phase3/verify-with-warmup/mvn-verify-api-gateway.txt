@@ -1,0 +1,212 @@
+$ (cd services/api-gateway && mvn -B verify)
+JAVA_HOME=/private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/jdk17/jdk-17.0.21+9/Contents/Home
+openjdk version "17.0.21" 2026-10-20
+OpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode)
+Thu Nov 12 19:18:13 EST 2026
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.tracer:api-gateway >-----------------------
+[INFO] Building API Gateway 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ api-gateway ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ api-gateway ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 6 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ api-gateway ---
+[INFO] skip non existing resourceDirectory /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ api-gateway ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 4 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ api-gateway ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tracer.gateway.LogShipperTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.532 s -- in com.tracer.gateway.LogShipperTest
+[INFO] Running com.tracer.gateway.GatewayDependencyDownTest
+[INFO] Running com.tracer.gateway.GatewayDependencyDownTest$OrdersUnreachable
+19:18:21.651 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.tracer.gateway.GatewayDependencyDownTest$OrdersUnreachable]: OrdersUnreachable does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:18:21.761 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.tracer.gateway.ApiGatewayApplication for test class com.tracer.gateway.GatewayDependencyDownTest$OrdersUnreachable
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-11-12T19:18:22.374-05:00  INFO 33441 --- [api-gateway] [           main] ewayDependencyDownTest$OrdersUnreachable : Starting GatewayDependencyDownTest.OrdersUnreachable using Java 17.0.21 with PID 33441 (started by tahatarkhani in /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway)
+2026-11-12T19:18:22.375-05:00  INFO 33441 --- [api-gateway] [           main] ewayDependencyDownTest$OrdersUnreachable : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T19:18:23.471-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-12T19:18:23.483-05:00  INFO 33441 --- [api-gateway] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-12T19:18:23.483-05:00  INFO 33441 --- [api-gateway] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-11-12T19:18:23.541-05:00  INFO 33441 --- [api-gateway] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-12T19:18:23.541-05:00  INFO 33441 --- [api-gateway] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1147 ms
+2026-11-12T19:18:24.017-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-11-12T19:18:24.080-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63167 (http) with context path ''
+2026-11-12T19:18:24.091-05:00  INFO 33441 --- [api-gateway] [           main] ewayDependencyDownTest$OrdersUnreachable : Started GatewayDependencyDownTest.OrdersUnreachable in 1.999 seconds (process running for 5.622)
+2026-11-12T19:18:24.197-05:00  INFO 33441 --- [api-gateway] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-12T19:18:24.198-05:00  INFO 33441 --- [api-gateway] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-12T19:18:24.199-05:00  INFO 33441 --- [api-gateway] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[WARM-UP] Warm-up completed in 135 ms (3/3 ok, GET /actuator/health)
+[API-GATEWAY] [cab36e80-b2ae-4ba3-9bdf-32e723d22889] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [cab36e80-b2ae-4ba3-9bdf-32e723d22889] Calling Orders service...
+[API-GATEWAY] [cab36e80-b2ae-4ba3-9bdf-32e723d22889] Orders service unreachable: I/O error on POST request for "http://127.0.0.1:63166/api/orders": Connection refused
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.666 s -- in com.tracer.gateway.GatewayDependencyDownTest$OrdersUnreachable
+[INFO] Running com.tracer.gateway.GatewayDependencyDownTest$AggregatorHung
+2026-11-12T19:18:25.259-05:00  INFO 33441 --- [api-gateway] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tracer.gateway.GatewayDependencyDownTest$AggregatorHung]: AggregatorHung does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-12T19:18:25.261-05:00  INFO 33441 --- [api-gateway] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tracer.gateway.ApiGatewayApplication for test class com.tracer.gateway.GatewayDependencyDownTest$AggregatorHung
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-11-12T19:18:25.286-05:00  INFO 33441 --- [api-gateway] [           main] GatewayDependencyDownTest$AggregatorHung : Starting GatewayDependencyDownTest.AggregatorHung using Java 17.0.21 with PID 33441 (started by tahatarkhani in /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway)
+2026-11-12T19:18:25.287-05:00  INFO 33441 --- [api-gateway] [           main] GatewayDependencyDownTest$AggregatorHung : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T19:18:25.521-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-12T19:18:25.522-05:00  INFO 33441 --- [api-gateway] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-12T19:18:25.522-05:00  INFO 33441 --- [api-gateway] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-11-12T19:18:25.535-05:00  INFO 33441 --- [api-gateway] [           main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-11-12T19:18:25.535-05:00  INFO 33441 --- [api-gateway] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 247 ms
+2026-11-12T19:18:25.714-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-11-12T19:18:25.733-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63174 (http) with context path ''
+2026-11-12T19:18:25.738-05:00  INFO 33441 --- [api-gateway] [           main] GatewayDependencyDownTest$AggregatorHung : Started GatewayDependencyDownTest.AggregatorHung in 0.472 seconds (process running for 7.269)
+2026-11-12T19:18:25.741-05:00  INFO 33441 --- [api-gateway] [o-auto-2-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-12T19:18:25.742-05:00  INFO 33441 --- [api-gateway] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-12T19:18:25.742-05:00  INFO 33441 --- [api-gateway] [o-auto-2-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+[WARM-UP] Warm-up completed in 11 ms (3/3 ok, GET /actuator/health)
+[API-GATEWAY] [d130eaee-d033-4071-85d2-3bc1dc07b915] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [d130eaee-d033-4071-85d2-3bc1dc07b915] Calling Orders service...
+[API-GATEWAY] [d130eaee-d033-4071-85d2-3bc1dc07b915] Received response from Orders service
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.507 s -- in com.tracer.gateway.GatewayDependencyDownTest$AggregatorHung
+[INFO] Running com.tracer.gateway.GatewayDependencyDownTest$AggregatorConnectionRefused
+2026-11-12T19:18:25.767-05:00  INFO 33441 --- [api-gateway] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tracer.gateway.GatewayDependencyDownTest$AggregatorConnectionRefused]: AggregatorConnectionRefused does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-12T19:18:25.768-05:00  INFO 33441 --- [api-gateway] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tracer.gateway.ApiGatewayApplication for test class com.tracer.gateway.GatewayDependencyDownTest$AggregatorConnectionRefused
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-11-12T19:18:25.787-05:00  INFO 33441 --- [api-gateway] [           main] encyDownTest$AggregatorConnectionRefused : Starting GatewayDependencyDownTest.AggregatorConnectionRefused using Java 17.0.21 with PID 33441 (started by tahatarkhani in /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway)
+2026-11-12T19:18:25.788-05:00  INFO 33441 --- [api-gateway] [           main] encyDownTest$AggregatorConnectionRefused : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T19:18:25.959-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-11-12T19:18:25.960-05:00  INFO 33441 --- [api-gateway] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-12T19:18:25.960-05:00  INFO 33441 --- [api-gateway] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-11-12T19:18:25.970-05:00  INFO 33441 --- [api-gateway] [           main] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2026-11-12T19:18:25.970-05:00  INFO 33441 --- [api-gateway] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 181 ms
+2026-11-12T19:18:26.060-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-11-12T19:18:26.074-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63182 (http) with context path ''
+2026-11-12T19:18:26.081-05:00  INFO 33441 --- [api-gateway] [           main] encyDownTest$AggregatorConnectionRefused : Started GatewayDependencyDownTest.AggregatorConnectionRefused in 0.309 seconds (process running for 7.612)
+2026-11-12T19:18:26.084-05:00  INFO 33441 --- [api-gateway] [o-auto-3-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-12T19:18:26.084-05:00  INFO 33441 --- [api-gateway] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-12T19:18:26.085-05:00  INFO 33441 --- [api-gateway] [o-auto-3-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+[WARM-UP] Warm-up completed in 12 ms (3/3 ok, GET /actuator/health)
+[API-GATEWAY] [621abf9b-8125-4101-840a-736f085da415] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [621abf9b-8125-4101-840a-736f085da415] Calling Orders service...
+[API-GATEWAY] [621abf9b-8125-4101-840a-736f085da415] Received response from Orders service
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.346 s -- in com.tracer.gateway.GatewayDependencyDownTest$AggregatorConnectionRefused
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.531 s -- in com.tracer.gateway.GatewayDependencyDownTest
+[INFO] Running com.tracer.gateway.GatewayContractTest
+2026-11-12T19:18:26.119-05:00  INFO 33441 --- [api-gateway] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.tracer.gateway.GatewayContractTest]: GatewayContractTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-11-12T19:18:26.129-05:00  INFO 33441 --- [api-gateway] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.tracer.gateway.ApiGatewayApplication for test class com.tracer.gateway.GatewayContractTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-11-12T19:18:26.155-05:00  INFO 33441 --- [api-gateway] [           main] com.tracer.gateway.GatewayContractTest   : Starting GatewayContractTest using Java 17.0.21 with PID 33441 (started by tahatarkhani in /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway)
+2026-11-12T19:18:26.156-05:00  INFO 33441 --- [api-gateway] [           main] com.tracer.gateway.GatewayContractTest   : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T19:18:26.457-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-12T19:18:26.457-05:00  INFO 33441 --- [api-gateway] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-12T19:18:26.460-05:00  INFO 33441 --- [api-gateway] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-11-12T19:18:26.463-05:00  INFO 33441 --- [api-gateway] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 6 ms
+2026-11-12T19:18:26.478-05:00  INFO 33441 --- [api-gateway] [           main] com.tracer.gateway.GatewayContractTest   : Started GatewayContractTest in 0.339 seconds (process running for 8.009)
+[API-GATEWAY] [2496f5b4-751a-4448-b6e0-dad08c466ac1] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [2496f5b4-751a-4448-b6e0-dad08c466ac1] Calling Orders service...
+[API-GATEWAY] [2496f5b4-751a-4448-b6e0-dad08c466ac1] Received response from Orders service
+[API-GATEWAY] [55c610d8-87fe-49e0-9172-31cd00a47dcf] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [55c610d8-87fe-49e0-9172-31cd00a47dcf] Calling Orders service...
+[API-GATEWAY] [55c610d8-87fe-49e0-9172-31cd00a47dcf] Received response from Orders service
+[API-GATEWAY] [7f2d032f-1709-438b-a57a-9ad8a65beeb4] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [7f2d032f-1709-438b-a57a-9ad8a65beeb4] Calling Orders service...
+[API-GATEWAY] [7f2d032f-1709-438b-a57a-9ad8a65beeb4] Received response from Orders service
+[API-GATEWAY] [98117b64-67df-48ff-8861-eeef79ae6183] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [98117b64-67df-48ff-8861-eeef79ae6183] Calling Orders service...
+[API-GATEWAY] [98117b64-67df-48ff-8861-eeef79ae6183] Received response from Orders service
+[API-GATEWAY] [477c5632-701a-42c5-9209-5247943fa6f6] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [477c5632-701a-42c5-9209-5247943fa6f6] Calling Orders service...
+[API-GATEWAY] [477c5632-701a-42c5-9209-5247943fa6f6] Received response from Orders service
+[API-GATEWAY] [eef05050-cd92-43e3-8d81-7686a3e6f746] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [eef05050-cd92-43e3-8d81-7686a3e6f746] Calling Orders service...
+[API-GATEWAY] [eef05050-cd92-43e3-8d81-7686a3e6f746] Received response from Orders service
+[API-GATEWAY] [ea4c1903-171c-4f65-83ab-65742e372d78] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [ea4c1903-171c-4f65-83ab-65742e372d78] Calling Orders service...
+[API-GATEWAY] [ea4c1903-171c-4f65-83ab-65742e372d78] Received response from Orders service
+[API-GATEWAY] [6993428b-8cd4-4d2e-9243-1822729b71bb] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [6993428b-8cd4-4d2e-9243-1822729b71bb] Calling Orders service...
+[API-GATEWAY] [6993428b-8cd4-4d2e-9243-1822729b71bb] Received response from Orders service
+[API-GATEWAY] [cdb64467-4f15-4ef3-b29c-093d0af29dec] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [cdb64467-4f15-4ef3-b29c-093d0af29dec] Calling Orders service...
+[API-GATEWAY] [cdb64467-4f15-4ef3-b29c-093d0af29dec] Received response from Orders service
+[API-GATEWAY] [f413997c-11e3-4843-a7b1-a820c54b99c3] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [f413997c-11e3-4843-a7b1-a820c54b99c3] Calling Orders service...
+[API-GATEWAY] [f413997c-11e3-4843-a7b1-a820c54b99c3] Received response from Orders service
+[API-GATEWAY] [da6d5300-02ed-49e6-bb7d-d8418e6a33b5] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [da6d5300-02ed-49e6-bb7d-d8418e6a33b5] Calling Orders service...
+[API-GATEWAY] [da6d5300-02ed-49e6-bb7d-d8418e6a33b5] Received response from Orders service
+[API-GATEWAY] [97a117a2-23a3-49f8-bccb-3dedb713265b] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [97a117a2-23a3-49f8-bccb-3dedb713265b] Calling Orders service...
+[API-GATEWAY] [97a117a2-23a3-49f8-bccb-3dedb713265b] Orders service returned 500 INTERNAL_SERVER_ERROR
+[API-GATEWAY] [38eee246-09bb-42fc-8cde-2db92d0485e5] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [38eee246-09bb-42fc-8cde-2db92d0485e5] Calling Orders service...
+[API-GATEWAY] [38eee246-09bb-42fc-8cde-2db92d0485e5] Received response from Orders service
+[API-GATEWAY] [82e0a0c4-d5ea-4e3d-aeeb-64ad505dc66d] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [82e0a0c4-d5ea-4e3d-aeeb-64ad505dc66d] Calling Orders service...
+[API-GATEWAY] [82e0a0c4-d5ea-4e3d-aeeb-64ad505dc66d] Received response from Orders service
+[API-GATEWAY] [130c2bbb-9ace-46da-b885-fbba0d4a33b1] Received order request: OrderRequest{customerId='C-1', items='sku-1'}
+[API-GATEWAY] [130c2bbb-9ace-46da-b885-fbba0d4a33b1] Calling Orders service...
+[API-GATEWAY] [130c2bbb-9ace-46da-b885-fbba0d4a33b1] Received response from Orders service
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.975 s -- in com.tracer.gateway.GatewayContractTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ api-gateway ---
+[INFO] Building jar: /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway/target/api-gateway-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.2.0:repackage (repackage) @ api-gateway ---
+[INFO] Replacing main artifact /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway/target/api-gateway-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/tahatarkhani/Documents/GitHub/request-tracer/services/api-gateway/target/api-gateway-1.0.0.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.149 s
+[INFO] Finished at: 2026-11-12T19:18:28-05:00
+[INFO] ------------------------------------------------------------------------
+exit=0

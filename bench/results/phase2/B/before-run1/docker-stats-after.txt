@@ -1,0 +1,5 @@
+rtbefore-aggregator-1 cpu=0.12% mem=326MiB / 5.795GiB memPerc=5.49%
+rtbefore-dashboard-1 cpu=0.00% mem=3.258MiB / 5.795GiB memPerc=0.05%
+rtbefore-gateway-1 cpu=0.13% mem=383.4MiB / 5.795GiB memPerc=6.46%
+rtbefore-inventory-1 cpu=0.10% mem=291.5MiB / 5.795GiB memPerc=4.91%
+rtbefore-orders-1 cpu=0.11% mem=289.6MiB / 5.795GiB memPerc=4.88%

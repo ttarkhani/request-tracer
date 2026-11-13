@@ -1,0 +1,5 @@
+docker info: NCPU=2 MemTotal=6222663680
+kubernetes enabled: true
+power: Now drawing from 'AC Power'  -InternalBattery-0 (id=6619235)	27%; charging; (no estimate) present: true 
+args: /private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/snapshots/phase3-warmup rtwarm 7 /Users/tahatarkhani/Documents/GitHub/request-tracer/bench/results/phase3/fix-warmup.csv
+Thu Nov 12 19:19:56 EST 2026

@@ -1,0 +1,9 @@
+service      started@ loaded at startup first request next 20 req  top packages in first request
+aggregator      17.5s              6568           465           4  com.fasterxml.jackson 147, org.apache.tomcat 52, generated (lambdas/proxies/reflection accessors) 48, org.springframework.web 41, org.apache.coyote 33, org.apache.catalina 30
+gateway         21.6s              7444           815          45  com.fasterxml.jackson 189, generated (lambdas/proxies/reflection accessors) 105, org.springframework.web 77, com.sun.jmx 53, org.apache.tomcat 50, org.apache.coyote 34
+orders          21.4s              7487           794           4  com.fasterxml.jackson 180, generated (lambdas/proxies/reflection accessors) 101, org.springframework.web 79, com.sun.jmx 53, org.apache.tomcat 51, org.apache.coyote 34
+inventory       20.5s              7443           816           5  com.fasterxml.jackson 159, generated (lambdas/proxies/reflection accessors) 109, org.springframework.web 78, com.sun.jmx 53, org.apache.tomcat 51, org.apache.coyote 34
+aggregator: GC pauses before Started 10 (291.5 ms); after Started (first + 20 requests) 0 (0.0 ms)
+gateway: GC pauses before Started 11 (609.4 ms); after Started (first + 20 requests) 3 (19.4 ms)
+orders: GC pauses before Started 11 (271.7 ms); after Started (first + 20 requests) 3 (44.1 ms)
+inventory: GC pauses before Started 10 (244.0 ms); after Started (first + 20 requests) 4 (56.6 ms)

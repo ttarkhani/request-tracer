@@ -1,0 +1,14 @@
+# Fix candidate 3: C1-only JIT + SerialGC (fewer compiler/GC threads competing for 2 vCPUs).
+services:
+  aggregator:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1 -XX:+UseSerialGC
+  gateway:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1 -XX:+UseSerialGC
+  orders:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1 -XX:+UseSerialGC
+  inventory:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1 -XX:+UseSerialGC

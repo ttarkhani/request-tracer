@@ -1,0 +1,9 @@
+date: Thu Nov 12 18:17:46 EST 2026
+tree: /private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/snapshots/phase2
+project: rtafter
+scenario: A
+k6 env: RATE=50 WARMUP_S=60 DURATION_S=60 MAX_VUS=300 TIMEOUT=10s SAMPLE_EVERY=50
+docker info: NCPU=2 MemTotal=6222663680 Server=29.5.3
+kubernetes enabled (rdctl): true
+host load: 18:17  up 36 days, 17:59, 1 user, load averages: 3.49 4.42 5.62
+power: Now drawing from 'AC Power'  -InternalBattery-0 (id=6619235)	15%; charging; 6:23 remaining present: true  adapter: Wattage=45W

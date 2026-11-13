@@ -1,0 +1,9 @@
+date: Thu Nov 12 18:20:30 EST 2026
+tree: /private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/snapshots/phase1
+project: rtbefore
+scenario: A
+k6 env: RATE=50 WARMUP_S=60 DURATION_S=60 MAX_VUS=300 TIMEOUT=10s SAMPLE_EVERY=50
+docker info: NCPU=2 MemTotal=6222663680 Server=29.5.3
+kubernetes enabled (rdctl): true
+host load: 18:20  up 36 days, 18:02, 1 user, load averages: 3.28 3.97 5.22
+power: Now drawing from 'AC Power'  -InternalBattery-0 (id=6619235)	16%; AC attached; not charging present: true  adapter: Wattage=45W

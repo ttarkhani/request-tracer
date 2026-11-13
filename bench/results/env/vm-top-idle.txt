@@ -1,0 +1,27 @@
+time="2026-11-12T17:36:41-05:00" level=warning msg="vmType vz: On Intel Mac, macOS 15.5 or later is required to run Linux 6.12 or later. Update macOS, or change vmType to `qemu` if the VM does not start up. (https://github.com/lima-vm/lima/issues/3334)"
+ 17:36:41 up 18 min,  0 users,  load average: 13.14, 12.65, 8.13
+Mem: 4134688K used, 1942132K free, 634208K shrd, 58676K buff, 2536884K cached
+CPU:  31% usr  26% sys   0% nic  26% idle   0% io  15% irq   0% sirq
+Load average: 13.15 12.66 8.14 4/313 19277
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+ 5032  5031 root     S    1477m  25%   1  32% /usr/bin/dockerd --host=unix:///var/run/docker.sock --host=unix:///var/run/docker.sock.raw
+ 5050  5032 root     S    1283m  21%   0  32% containerd --config /var/run/docker/containerd/containerd.toml
+ 5712  5711 root     S    2173m  36%   1   0% {k3s-server} /usr/local/bin/k3s server
+ 5862  4238 root     S    1446m  24%   0   0% kubectl 
+ 6856  6825 65532    S    1406m  23%   1   0% traefik traefik --entryPoints.metrics.address=:9100/tcp --entryPoints.traefik.address=:8080/tcp --entryPoints.web.address=:8000/tcp --entryPoints.websecure.address=:8443/tcp --api.dashboard=true --ping=true --metrics.prometheus=true --metrics.prometheus.entrypoint=metrics --providers.kubernetescrd --providers.kubernetescrd.allowEmptyServices=true --providers.kubernetesingress --providers.kubernete
+ 6932  6906 65532    S    1366m  23%   0   0% /coredns -conf /etc/coredns/Corefile
+ 6772  6736 1000     S    1299m  22%   1   0% /metrics-server --cert-dir=/tmp --secure-port=10250 --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --kubelet-use-node-status-port --metric-resolution=15s --tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA
+ 4238  4237 root     S    1285m  21%   1   0% /usr/local/bin/lima-guestagent daemon --debug=false --vsock-port 2222 --virtio-port
+ 7631  7606 root     S    1280m  21%   1   0% local-path-provisioner start --config /etc/config/config.json
+ 6318     1 root     S    1241m  21%   1   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id f7e802fba8983775a5d6990c2bf5f5bc668d7c1e56c39dd89584174b01664d66 -address /var/run/docker/containerd/containerd.sock
+ 6825     1 root     S    1241m  21%   1   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 6cd57a97f2ae6d20e694dc6a058f41b7da411caeabf28bc296063dc8a47a0605 -address /var/run/docker/containerd/containerd.sock
+ 6906     1 root     S    1241m  21%   0   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 425965e43edf8b3181c635a8bbbade72ecc28c419c1b797acc77df863faf3b48 -address /var/run/docker/containerd/containerd.sock
+ 6736     1 root     S    1241m  21%   0   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 2aebb400e893e39cec6670d298dae1f44eb38b999aa9f4f4b3fa47af12888b64 -address /var/run/docker/containerd/containerd.sock
+ 7491     1 root     S    1241m  21%   0   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id eebdd39f86a55d302a20b2b7a3f0c720df5c9c22cd2fb1c8ead5a1f8c37e9237 -address /var/run/docker/containerd/containerd.sock
+ 7421     1 root     S    1241m  21%   1   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 3195d1b965823bf14d017fbe8feae025a1a02d9a603519f7176733b07c330d84 -address /var/run/docker/containerd/containerd.sock
+ 6942     1 root     S    1241m  21%   1   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id c3ca246fc93e808d31110dc34a996f2dd6b8a8ad310512aac7307523b661a336 -address /var/run/docker/containerd/containerd.sock
+ 7606     1 root     S    1241m  21%   0   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 2b73ae58b20b864c13a10b2a60d9996928f5d6b3f7274fbd6d4b91ea5f3e5a2f -address /var/run/docker/containerd/containerd.sock
+ 7383     1 root     S    1241m  21%   1   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 5d04bd1ea9fddd55a22d43b692cfebbf1181b16a8dec759352842e182789f005 -address /var/run/docker/containerd/containerd.sock
+ 6220     1 root     S    1241m  21%   1   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 8f6e07c47222c6612ab2c52538d9c4b06e68db304fcfe813e1503d0728cced89 -address /var/run/docker/containerd/containerd.sock
+ 6569     1 root     S    1241m  21%   0   0% /usr/bin/containerd-shim-runc-v2 -namespace moby -id 1a71afbcf270300a4bd8942a3e7e63f6eb8a9fcea3b36e5e5c7a40c6d7580ae2 -address /var/run/docker/containerd/containerd.sock
+ 4678  4675 tahatark S     8312   0%   1   0% sshd-session.pam: tahatarkhani@notty

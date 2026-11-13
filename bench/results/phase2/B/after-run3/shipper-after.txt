@@ -1,0 +1,3 @@
+gateway enqueued=9304.0 shipped=9284.0 dropped=0.0 failed=20.0 depth=0.0
+orders enqueued=9304.0 shipped=9284.0 dropped=0.0 failed=20.0 depth=0.0
+inventory enqueued=9304.0 shipped=9284.0 dropped=0.0 failed=20.0 depth=0.0
