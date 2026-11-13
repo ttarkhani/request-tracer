@@ -1,7 +1,6 @@
 # Request Tracer
 
 [![CI](https://github.com/ttarkhani/request-tracer/actions/workflows/ci.yml/badge.svg)](https://github.com/ttarkhani/request-tracer/actions/workflows/ci.yml)
-<!-- Placeholder: the workflow has not yet run on GitHub Actions; this badge is not a claim that CI passes. -->
 
 A small, from-scratch distributed-tracing system, a scoped-down way to learn what Jaeger or Zipkin do under the hood.
 A correlation ID (`X-Trace-Id`) propagates through three Spring Boot services (Gateway → Orders → Inventory). Each of
@@ -143,6 +142,7 @@ Notes and evidence levels:
 
 Counts below come from the saved Surefire and Vitest output (`bench/results/phase3/verify-with-warmup/`,
 `bench/results/phase3/e2e-compose-final.txt`, `bench/results/phase1/dashboard-ci-local.txt`). All Maven runs used JDK 17.
+87 automated tests in total (24 + 10 + 10 + 33 + 2 + 8).
 
 | Suite | Tests | What it covers |
 |---|---|---|
@@ -160,13 +160,14 @@ Both negative controls failed as they should. With the aggregator store swapped 
 repetitions of the concurrency test failed (17 failures + 8 errors). When Orders was made to forward a fresh ID, the e2e
 test failed with `Expected size: 6 but was: 4`.
 
-### CI (not yet verified on GitHub)
+### CI
 
 `.github/workflows/ci.yml` defines three jobs: a Java matrix over the four Maven modules (Temurin 17, Maven cache,
 `mvn -B verify`); a dashboard job (`npm ci`, lint, `npm test`, build); and an e2e job (`docker compose build`/`up -d`,
 `e2e/wait-for-stack.sh`, `mvn -B verify` in `e2e/`, logs dumped on failure, `docker compose down -v`). The workflow
-passes actionlint and each job's commands were run locally, **but it has never run on GitHub Actions**, so its status
-there is unknown.
+passes actionlint, each job's commands were run locally, and it runs on GitHub Actions: all 8 checks (dashboard lint/test/build, end-to-end
+on Docker Compose, and `mvn verify` for the log-aggregator, api-gateway, inventory and orders) passed on
+[PR #1](https://github.com/ttarkhani/request-tracer/pull/1).
 
 ## Setup
 
@@ -252,7 +253,7 @@ python3 -I bench/scripts/summarize_coldstart.py mine=bench/results/my-coldstart.
 ## Tech stack
 
 Java 17, Spring Boot 3.2.0 (Web, Actuator/Micrometer), Maven, JUnit 5 + Spring Boot Test/MockMvc, React + Vite, Vitest,
-Docker / Docker Compose, k6, GitHub Actions (workflow defined, not yet run).
+Docker / Docker Compose, k6, GitHub Actions.
 
 ## Challenges & how they were solved
 
@@ -298,7 +299,6 @@ Docker / Docker Compose, k6, GitHub Actions (workflow defined, not yet run).
   with the default queue, healthy and with a 20 s aggregator freeze.
 - **Single-machine benchmarks.** All numbers come from one 2-vCPU / 6 GB VM with k3s running, as same-machine
   before/after comparisons. The faster C1-only JVM setting was not load-tested.
-- **CI unverified.** The workflow has not yet run on GitHub Actions.
 - **Shipping service never built.** The chain is Gateway → Orders → Inventory.
 - **The Vercel site is demo mode.** request-tracer.vercel.app has no backend. It shows traces generated in the browser,
   not live tracing.
