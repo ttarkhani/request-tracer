@@ -1,6 +1,7 @@
 package com.tracer.orders.controller;
 
 import com.tracer.orders.LogEntry;
+import com.tracer.orders.LogShipper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
@@ -9,6 +10,8 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/orders")
 public class OrderServiceController {
@@ -16,17 +19,22 @@ public class OrderServiceController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private LogShipper logShipper;
+
     @Value("${inventory.service.url}")
     private String inventoryServiceUrl;
-
-    @Value("${aggregator.url}")
-    private String aggregatorUrl;
 
     @PostMapping
     public OrderResponse createOrder(
             @RequestBody OrderRequest request,
-            @RequestHeader(value = "X-Trace-Id", required = false) String traceId) {
+            @RequestHeader(value = "X-Trace-Id", required = false) String inboundTraceId) {
 
+        // A request without trace context starts a new trace at this hop; the new ID is still
+        // forwarded downstream so the rest of the chain stays correlated (never ship a null/blank key).
+        String traceId = (inboundTraceId == null || inboundTraceId.isBlank())
+                ? UUID.randomUUID().toString()
+                : inboundTraceId;
         long receivedAt = System.currentTimeMillis();
         System.out.println("[ORDERS-SERVICE] [" + traceId + "] Creating order: " + request);
         shipLog(traceId, "Received order request", "success", receivedAt);
@@ -54,13 +62,9 @@ public class OrderServiceController {
         );
     }
 
+    /** Non-blocking: hands the entry (timestamped at the event) to the async shipper. */
     private void shipLog(String traceId, String message, String status, long timestamp) {
-        try {
-            LogEntry entry = new LogEntry(traceId, "orders-service", message, status, timestamp);
-            restTemplate.postForObject(aggregatorUrl, entry, String.class);
-        } catch (Exception e) {
-            System.out.println("[ORDERS-SERVICE] Failed to ship log to aggregator: " + e.getMessage());
-        }
+        logShipper.ship(new LogEntry(traceId, "orders-service", message, status, timestamp));
     }
 
     static class OrderRequest {

@@ -11,3 +11,18 @@ orders:
 
 aggregator:
   url: http://localhost:8084/logs
+
+# Async log shipping (see LogShipper). Overflow policy: drop newest, counted.
+log:
+  shipper:
+    queue-capacity: 10000
+    workers: 2
+    connect-timeout-ms: 500
+    read-timeout-ms: 2000
+    flush-timeout-ms: 3000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
