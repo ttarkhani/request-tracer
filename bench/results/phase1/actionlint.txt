@@ -1,0 +1,9 @@
+$ docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint:1.7.7 -no-color -verbose
+verbose: Linting all workflow files in repository: /repo
+verbose: Detected project: /repo
+verbose: Collected 1 YAML files
+verbose: Linting .github/workflows/ci.yml
+verbose: Using project at /repo
+verbose: Found 0 parse errors in 0 ms for .github/workflows/ci.yml
+verbose: Found total 0 errors in 74 ms for .github/workflows/ci.yml
+exit=0

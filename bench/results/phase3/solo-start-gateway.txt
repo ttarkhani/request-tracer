@@ -1,0 +1,6 @@
+docker info: NCPU=2 MemTotal=6222663680
+cycle 1 gateway container_start_to_Started_s=5.660 spring_reported_s=4.641
+cycle 2 gateway container_start_to_Started_s=5.247 spring_reported_s=4.112
+cycle 3 gateway container_start_to_Started_s=5.089 spring_reported_s=4.102
+cycle 4 gateway container_start_to_Started_s=4.984 spring_reported_s=4.148
+cycle 5 gateway container_start_to_Started_s=4.784 spring_reported_s=3.876

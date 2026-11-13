@@ -1,0 +1,5 @@
+rtafter-aggregator-1 cpu=0.36% mem=151MiB / 5.795GiB memPerc=2.54%
+rtafter-dashboard-1 cpu=0.00% mem=3.258MiB / 5.795GiB memPerc=0.05%
+rtafter-gateway-1 cpu=0.26% mem=168.1MiB / 5.795GiB memPerc=2.83%
+rtafter-inventory-1 cpu=0.33% mem=188.9MiB / 5.795GiB memPerc=3.18%
+rtafter-orders-1 cpu=0.18% mem=192.2MiB / 5.795GiB memPerc=3.24%

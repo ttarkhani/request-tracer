@@ -1,0 +1,14 @@
+
+> dashboard@0.0.0 test
+> vitest run
+
+
+ RUN  v5.1.0 /Users/tahatarkhani/Documents/GitHub/request-tracer/dashboard
+
+
+ Test Files  1 passed (1)
+      Tests  8 passed (8)
+   Start at  17:12:09
+   Duration  249ms (transform 60%, import 20%, tests 12%, worker 7%)
+
+exit=0

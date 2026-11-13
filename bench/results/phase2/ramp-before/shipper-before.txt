@@ -1,0 +1,3 @@
+gateway enqueued=n/a shipped=n/a dropped=n/a failed=n/a depth=n/a
+orders enqueued=n/a shipped=n/a dropped=n/a failed=n/a depth=n/a
+inventory enqueued=n/a shipped=n/a dropped=n/a failed=n/a depth=n/a

@@ -1,0 +1,5 @@
+/rtbefore-aggregator-1 restarts=0 oom=false status=running exit=0
+/rtbefore-dashboard-1 restarts=0 oom=false status=running exit=0
+/rtbefore-gateway-1 restarts=0 oom=false status=running exit=0
+/rtbefore-inventory-1 restarts=0 oom=false status=running exit=0
+/rtbefore-orders-1 restarts=0 oom=false status=running exit=0

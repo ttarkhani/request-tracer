@@ -1,0 +1,83 @@
+$ (cd services/inventory && mvn -B verify)
+JAVA_HOME=/private/tmp/claude-501/-Users-tahatarkhani-Documents-GitHub-request-tracer/8091b665-b8c6-412f-a45a-6a540b97aeaf/scratchpad/jdk17/jdk-17.0.21+9/Contents/Home
+openjdk version "17.0.21" 2026-10-20
+OpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode)
+Thu Nov 12 17:44:55 EST 2026
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------< com.tracer:inventory-service >--------------------
+[INFO] Building Inventory Service 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ inventory-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ inventory-service ---
+[INFO] Changes detected - recompiling the module! :input tree
+[INFO] Compiling 4 source files with javac [debug release 17] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ inventory-service ---
+[INFO] skip non existing resourceDirectory /Users/tahatarkhani/Documents/GitHub/request-tracer/services/inventory/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ inventory-service ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 3 source files with javac [debug release 17] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.1.2:test (default-test) @ inventory-service ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.tracer.inventory.LogShipperTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.174 s -- in com.tracer.inventory.LogShipperTest
+[INFO] Running com.tracer.inventory.InventoryContractTest
+17:45:02.465 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.tracer.inventory.InventoryContractTest]: InventoryContractTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:45:02.604 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.tracer.inventory.InventoryApplication for test class com.tracer.inventory.InventoryContractTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-11-12T17:45:02.941-05:00  INFO 89857 --- [inventory-service] [           main] c.t.inventory.InventoryContractTest      : Starting InventoryContractTest using Java 17.0.21 with PID 89857 (started by tahatarkhani in /Users/tahatarkhani/Documents/GitHub/request-tracer/services/inventory)
+2026-11-12T17:45:02.942-05:00  INFO 89857 --- [inventory-service] [           main] c.t.inventory.InventoryContractTest      : No active profile set, falling back to 1 default profile: "default"
+2026-11-12T17:45:04.042-05:00  INFO 89857 --- [inventory-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-11-12T17:45:04.042-05:00  INFO 89857 --- [inventory-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-11-12T17:45:04.048-05:00  INFO 89857 --- [inventory-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-11-12T17:45:04.058-05:00  INFO 89857 --- [inventory-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
+2026-11-12T17:45:04.105-05:00  INFO 89857 --- [inventory-service] [           main] c.t.inventory.InventoryContractTest      : Started InventoryContractTest in 1.401 seconds (process running for 4.358)
+[INVENTORY-SERVICE] [a43d33d1-f879-422d-bb80-b92c08fbc8c6] Checking inventory: InventoryCheckRequest{items='sku-1'}
+[INVENTORY-SERVICE] [a43d33d1-f879-422d-bb80-b92c08fbc8c6] Inventory check complete
+[INVENTORY-SERVICE] [1766664f-ceda-4fee-90fe-db035fcf24d1] Checking inventory: InventoryCheckRequest{items='sku-1'}
+[INVENTORY-SERVICE] [1766664f-ceda-4fee-90fe-db035fcf24d1] Inventory check complete
+[INVENTORY-SERVICE] [f561aa52-6498-428d-beab-1141e82c2354] Checking inventory: InventoryCheckRequest{items='sku-1'}
+[INVENTORY-SERVICE] [f561aa52-6498-428d-beab-1141e82c2354] Inventory check complete
+[INVENTORY-SERVICE] [7a72a736-b06d-452f-a16b-ccb1d24b3808] Checking inventory: InventoryCheckRequest{items='sku-1'}
+[INVENTORY-SERVICE] [7a72a736-b06d-452f-a16b-ccb1d24b3808] Inventory check complete
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.357 s -- in com.tracer.inventory.InventoryContractTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.3.0:jar (default-jar) @ inventory-service ---
+[INFO] Building jar: /Users/tahatarkhani/Documents/GitHub/request-tracer/services/inventory/target/inventory-service-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:3.2.0:repackage (repackage) @ inventory-service ---
+[INFO] Replacing main artifact /Users/tahatarkhani/Documents/GitHub/request-tracer/services/inventory/target/inventory-service-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/tahatarkhani/Documents/GitHub/request-tracer/services/inventory/target/inventory-service-1.0.0.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.169 s
+[INFO] Finished at: 2026-11-12T17:45:06-05:00
+[INFO] ------------------------------------------------------------------------
+exit=0

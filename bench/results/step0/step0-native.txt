@@ -1,0 +1,69 @@
+java: openjdk version "17.0.21" 2026-10-20
+Started LogAggregatorApplication in 4.745 seconds
+Started ApiGatewayApplication in 4.829 seconds
+Started OrdersApplication in 4.869 seconds
+Started InventoryApplication in 4.869 seconds
+
+### (a) inbound X-Trace-Id to gateway
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 12 Nov 2026 22:06:08 GMT
+
+GET /traces/11111111-2222-3333-4444-555555555555 -> []
+gateway log line:
+[API-GATEWAY] [b4d37667-4be4-4380-a72e-db93937e2f37] Received order request: OrderRequest{customerId='CUST-1', items='sku-1'}
+
+### (b) POST directly to Orders with NO X-Trace-Id
+{"orderId":"ORD-99999","message":"Order created at orders service","status":"created"}
+HTTP 200
+orders.log (ship failures):
+[ORDERS-SERVICE] [null] Creating order: OrderRequest{customerId='CUST-1', items='sku-1'}
+[ORDERS-SERVICE] Failed to ship log to aggregator: 500 : "{"timestamp":"2026-11-12T22:06:08.771+00:00","status":500,"error":"Internal Server Error","path":"/logs"}"
+[ORDERS-SERVICE] [null] Calling Inventory service...
+[ORDERS-SERVICE] [null] Received response from Inventory service
+[ORDERS-SERVICE] Failed to ship log to aggregator: 500 : "{"timestamp":"2026-11-12T22:06:08.805+00:00","status":500,"error":"Internal Server Error","path":"/logs"}"
+inventory.log:
+[INVENTORY-SERVICE] [b4d37667-4be4-4380-a72e-db93937e2f37] Checking inventory: InventoryCheckRequest{items='sku-1'}
+[INVENTORY-SERVICE] [b4d37667-4be4-4380-a72e-db93937e2f37] Inventory check complete
+[INVENTORY-SERVICE] [] Checking inventory: InventoryCheckRequest{items='sku-1'}
+[INVENTORY-SERVICE] [] Inventory check complete
+aggregator.log:
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar!/:na]
+[LOG-AGGREGATOR] Stored log for trace  from inventory-service
+[LOG-AGGREGATOR] Stored log for trace  from inventory-service
+2026-11-12T17:06:08.803-05:00 ERROR 82639 --- [log-aggregator] [nio-8084-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.16.jar!/:na]
+GET /traces/ (empty key; path segment empty -> expect 404):
+{"timestamp":"2026-11-12T22:06:09.353+00:00","status":404,"error":"Not Found","path":"/traces/"} HTTP 404
+GET /traces/%20 :
+[] HTTP 200
+
+### (b2) POST directly to Inventory with NO X-Trace-Id
+{"allInStock":true,"message":"All items in stock"}
+HTTP 200
+[INVENTORY-SERVICE] Failed to ship log to aggregator: 500 : "{"timestamp":"2026-11-12T22:06:09.393+00:00","status":500,"error":"Internal Server Error","path":"/logs"}"
+[INVENTORY-SERVICE] Failed to ship log to aggregator: 500 : "{"timestamp":"2026-11-12T22:06:09.404+00:00","status":500,"error":"Internal Server Error","path":"/logs"}"
+
+### (b3) aggregator directly: POST /logs with traceId null and blank
+{"timestamp":"2026-11-12T22:06:09.737+00:00","status":500,"error":"Internal Server Error","path":"/logs"}
+HTTP 500
+stored
+HTTP 200
+
+### (e) arrival order vs timestamp order
+GET /traces/order-probe -> [300,100,200]
+
+### (d) inventory down: gateway call
+{"timestamp":"2026-11-12T22:06:10.951+00:00","status":500,"error":"Internal Server Error","path":"/orders/place"}
+HTTP 500
+trace 3ada9e91-a5fe-462c-b903-4d7aa8bae197 entries:
+{"serviceName":"api-gateway","message":"Received order request","status":"success"}
+{"serviceName":"orders-service","message":"Received order request","status":"success"}
+
+### (c) aggregator HUNG (accepts, never replies) -> does gateway block?
+curl exit after 20.000705s, HTTP 000
+curl exit code: 28
+bench/scripts/step0-native.sh: line 47: 82753 Terminated: 15          python3 -I "$H/hang_server.py" 8084
+done

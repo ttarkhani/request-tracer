@@ -20,3 +20,7 @@ build/
 
 # Environment files
 .env
+# Benchmark noise (keep locally, don't commit)
+bench/results/**/*build*.txt
+bench/results/phase2/compromised-battery/
+bench/results/**/compose-logs-tail.txt

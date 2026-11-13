@@ -1,0 +1,14 @@
+# Fix candidate 3a: C1-only JIT alone.
+services:
+  aggregator:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1
+  gateway:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1
+  orders:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1
+  inventory:
+    environment:
+      - JAVA_TOOL_OPTIONS=-XX:TieredStopAtLevel=1

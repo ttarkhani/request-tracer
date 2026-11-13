@@ -1,0 +1,13 @@
+ 17:37:36 up 19 min,  0 users,  load average: 5.44, 10.58, 7.68
+Mem: 4125944K used, 1950876K free, 634248K shrd, 58732K buff, 2536924K cached
+CPU:   0% usr   0% sys   0% nic  90% idle   0% io   5% irq   5% sirq
+Load average: 5.44 10.58 7.69 1/312 19481
+  PID  PPID USER     STAT   VSZ %VSZ CPU %CPU COMMAND
+ 5712  5711 root     S    2173m  36%   1   5% {k3s-server} /usr/local/bin/k3s server
+ 5032  5031 root     S    1477m  25%   1   0% /usr/bin/dockerd --host=unix:///var/run/docker.sock --host=unix:///var/run/docker.sock.raw
+ 5862  4238 root     S    1446m  24%   1   0% kubectl 
+ 6856  6825 65532    S    1406m  23%   1   0% traefik traefik --entryPoints.metrics.address=:9100/tcp --entryPoints.traefik.address=:8080/tcp --entryPoints.web.address=:8000/tcp --entryPoints.websecure.address=:8443/tcp --api.dashboard=true --ping=true --metrics.prometheus=true --metrics.prometheus.entrypoint=metrics --providers.kubernetescrd --providers.kubernetescrd.allowEmptyServices=true --providers.kubernetesingress --providers.kubernete
+ 6932  6906 65532    S    1366m  23%   0   0% /coredns -conf /etc/coredns/Corefile
+ 6772  6736 1000     S    1299m  22%   1   0% /metrics-server --cert-dir=/tmp --secure-port=10250 --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --kubelet-use-node-status-port --metric-resolution=15s --tls-cipher-suites=TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305,TLS_ECDHE_RSA
+ 4238  4237 root     S    1285m  21%   1   0% /usr/local/bin/lima-guestagent daemon --debug=false --vsock-port 2222 --virtio-port
+ 5050  5032 root     S    1283m  21%   0   0% containerd --config /var/run/docker/containerd/containerd.toml

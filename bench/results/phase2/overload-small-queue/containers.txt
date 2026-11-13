@@ -1,0 +1,5 @@
+/rtafter-aggregator-1 restarts=0 oom=false status=running exit=0
+/rtafter-dashboard-1 restarts=0 oom=false status=running exit=0
+/rtafter-gateway-1 restarts=0 oom=false status=running exit=0
+/rtafter-inventory-1 restarts=0 oom=false status=running exit=0
+/rtafter-orders-1 restarts=0 oom=false status=running exit=0

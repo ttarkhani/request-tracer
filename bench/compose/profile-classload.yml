@@ -1,0 +1,14 @@
+# Profiling only: class-load and GC logs with JVM uptime (read with docker cp).
+services:
+  aggregator:
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xlog:class+load=info:file=/tmp/classload.log:uptime -Xlog:gc:file=/tmp/gc.log:uptime
+  gateway:
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xlog:class+load=info:file=/tmp/classload.log:uptime -Xlog:gc:file=/tmp/gc.log:uptime
+  orders:
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xlog:class+load=info:file=/tmp/classload.log:uptime -Xlog:gc:file=/tmp/gc.log:uptime
+  inventory:
+    environment:
+      - JAVA_TOOL_OPTIONS=-Xlog:class+load=info:file=/tmp/classload.log:uptime -Xlog:gc:file=/tmp/gc.log:uptime
