@@ -1,16 +1,16 @@
-# React + Vite
+# Request Tracer dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite single-page app that renders one trace (the six log entries the aggregator stores per request) as a waterfall.
 
-Currently, two official plugins are available:
+- **Demo mode** (default for production builds with no env vars, e.g. the Vercel deploy): traces are generated in the browser. No backend is contacted; nothing shown is live tracing.
+- **Live mode**: set `VITE_AGGREGATOR_URL` (and optionally `VITE_GATEWAY_URL` so "Simulate a request" places a real order and reads the trace ID from the gateway's `X-Trace-Id` response header). See `.env.example`. `npm run dev` falls back to `http://localhost:8084` for the aggregator.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm ci
+npm run dev     # http://localhost:5173
+npm test        # Vitest: pure trace-building logic in src/lib/trace.js
+npm run lint
+npm run build
+```
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Under `docker compose up` (repo root) the dashboard is served by nginx on http://localhost:3000.
